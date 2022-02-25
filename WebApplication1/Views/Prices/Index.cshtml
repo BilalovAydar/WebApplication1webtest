@@ -13,21 +13,26 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.PriceId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
+                <a asp-action="IndexList" asp-route-id="@item.PriceId">@Html.DisplayFor(modelItem => item.PriceId)</a>
+</td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.PriceId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PriceId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PriceId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.PriceId">Изменить прайс</a> |
+                <a asp-action="Details" asp-route-id="@item.PriceId">Детали прайса</a> |
+                <a asp-action="Delete" asp-route-id="@item.PriceId">Удалить прайс</a>
             </td>
         </tr>
 }

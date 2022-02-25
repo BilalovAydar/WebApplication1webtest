@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.Data;
 using WebApplication1.Models;
+using WebApplication1.Controllers;
 
 namespace WebApplication1.Controllers
 {
@@ -24,6 +25,12 @@ namespace WebApplication1.Controllers
         {
             return View(await _context.Price.ToListAsync());
         }
+        public IActionResult IndexList(int? id)
+        {
+
+            return RedirectToAction("Index", "Goods", new { id = id });
+            //View(await _context.Good.Include(g => g.Price).Where(m => m.PriceId == id).ToListAsync());
+        }
 
         // GET: Prices/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -33,7 +40,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
 
-            var price = await _context.Price
+            var price = await _context.Price //Price
                 .FirstOrDefaultAsync(m => m.PriceId == id);
             if (price == null)
             {

@@ -20,10 +20,13 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Goods
-        public async Task<IActionResult> Index()
+        
+        public async Task<IActionResult> Index(int? id)
         {
-            var webApplication1Context = _context.Good.Include(g => g.Price);
-            return View(await webApplication1Context.ToListAsync());
+            if (id == null) return View(await _context.Good.Include(g => g.Price).ToListAsync());
+            var webApplication1Context = _context.Good.Include(g => g.Price).Where(m=>m.PriceId == id);
+            if (webApplication1Context == null) return NotFound();
+            return View(await webApplication1Context.ToListAsync()); 
         }
 
         // GET: Goods/Details/5
