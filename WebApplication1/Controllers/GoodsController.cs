@@ -66,10 +66,10 @@ namespace WebApplication1.Controllers
             {
                 _context.Add(good);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = good.PriceId });
             }
             ViewData["PriceId"] = new SelectList(_context.Price, "PriceId", "PriceId", good.PriceId);
-            return View(good);
+            return View(good); //good
         }
 
         // GET: Goods/Edit/5
@@ -86,7 +86,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             ViewData["PriceId"] = new SelectList(_context.Price, "PriceId", "PriceId", good.PriceId);
-            return View(good);
+            return View(good); 
         }
 
         // POST: Goods/Edit/5

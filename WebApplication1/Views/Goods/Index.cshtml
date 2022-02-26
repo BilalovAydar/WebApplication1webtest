@@ -13,19 +13,19 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PriceId)
+                № Товара @* @Html.DisplayNameFor(model => model.PriceId) @Html.DisplayNameFor(model => model.GoodId) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MyIntCol)
+                Числовая колонка @* @Html.DisplayNameFor(model => model.MyIntCol) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MyStrCol)
+                Строковая колонка @* @Html.DisplayNameFor(model => model.MyStrCol) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MyTextCol)
+                Текстовая колонка @* @Html.DisplayNameFor(model => model.MyTextCol) *@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
+                № Прайса @* @Html.DisplayNameFor(model => model.Price) *@
             </th>
             <th></th>
         </tr>
@@ -34,7 +34,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PriceId)
+                @Html.DisplayFor(modelItem => item.GoodId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MyIntCol)

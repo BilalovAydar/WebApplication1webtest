@@ -25,10 +25,10 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Goods" asp-action="Index">Товары</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Prices" asp-action="Index">Прайсы</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Prices" asp-action="Index">Прайсы</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Goods" asp-action="Index">Товары</a>
                         </li>
                     </ul>
                 </div>
@@ -43,7 +43,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; @Html.DisplayText(DateTime.Today.Year.ToString()) - WebApplication1
+            &copy; @Html.DisplayText(DateTime.Today.Year.ToString()).ToString()  - WebApplication1
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -67,7 +67,7 @@ namespace WebApplication1.Controllers
             {
                 _context.Add(price);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = price.PriceId});
             }
             return View(price);
         }

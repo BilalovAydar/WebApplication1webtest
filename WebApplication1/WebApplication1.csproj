@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>359d65ef-8591-4f19-b284-16ab621028bc</UserSecretsId>
+    <PackageId>ТестовоеЗадание</PackageId>
+    <Authors>Билалов Айдар Хайдарович</Authors>
+    <Company>Эксперт Центр</Company>
+    <Product>Тестовый проект</Product>
+    <AssemblyName>WebApplication1</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
