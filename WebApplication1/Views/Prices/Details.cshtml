@@ -1,28 +1,24 @@
-﻿@* @model IEnumerable<WebApplication1.Models.Good> *@
-@model WebApplication1.Models.Price 
+﻿@model WebApplication1.Models.Price
+
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Детали</h1>
+<h1>Details</h1>
 
 <div>
-    <h4>Прайс</h4>
+    <h4>Price</h4>
     <hr />
     <dl class="row">
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
         </dt>
-        @* @foreach (var item in Model)
-        { *@
-    <dd class="col-sm-10">
-        @Html.DisplayFor(m => m.Name)
-        @*  @Html.DisplayText(item.Name)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
         </dd>
-       @* } *@
-</dl>
+    </dl>
 </div>
 <div>
-     <a asp-action="Edit" asp-route-id="@Model.PriceId">Изменить</a> |
-     <a asp-action="Index">Назад к списку прайсов</a>
+    <a asp-action="Edit" asp-route-id="@Model.PriceId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

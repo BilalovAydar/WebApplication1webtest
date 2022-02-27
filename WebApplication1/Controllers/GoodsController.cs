@@ -20,13 +20,10 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Goods
-        
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index()
         {
-            if (id == null) return View(await _context.Good.Include(g => g.Price).ToListAsync());
-            var webApplication1Context = _context.Good.Include(g => g.Price).Where(m=>m.PriceId == id);
-            if (webApplication1Context == null) return NotFound();
-            return View(await webApplication1Context.ToListAsync()); 
+            var webApplication1Context = _context.Good.Include(g => g.Price);
+            return View(await webApplication1Context.ToListAsync());
         }
 
         // GET: Goods/Details/5
@@ -66,10 +63,10 @@ namespace WebApplication1.Controllers
             {
                 _context.Add(good);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { id = good.PriceId });
+                return RedirectToAction(nameof(Index));
             }
             ViewData["PriceId"] = new SelectList(_context.Price, "PriceId", "PriceId", good.PriceId);
-            return View(good); //good
+            return View(good);
         }
 
         // GET: Goods/Edit/5
@@ -86,7 +83,7 @@ namespace WebApplication1.Controllers
                 return NotFound();
             }
             ViewData["PriceId"] = new SelectList(_context.Price, "PriceId", "PriceId", good.PriceId);
-            return View(good); 
+            return View(good);
         }
 
         // POST: Goods/Edit/5

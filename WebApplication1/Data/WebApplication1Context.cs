@@ -17,7 +17,5 @@ namespace WebApplication1.Data
         public DbSet<WebApplication1.Models.Price> Price { get; set; }
 
         public DbSet<WebApplication1.Models.Good> Good { get; set; }
-
-       
     }
 }

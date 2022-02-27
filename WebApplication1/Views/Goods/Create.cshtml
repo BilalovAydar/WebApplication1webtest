@@ -4,42 +4,42 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Создание товара</h1>
+<h1>Create</h1>
 
-<h4>Товар создать</h4>
+<h4>Good</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="PriceId" class="control-label">ПрайсИД</label>
+                <label asp-for="PriceId" class="control-label"></label>
                 <select asp-for="PriceId" class ="form-control" asp-items="ViewBag.PriceId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="MyIntCol" class="control-label">Мое целочисленное поле</label>
+                <label asp-for="MyIntCol" class="control-label"></label>
                 <input asp-for="MyIntCol" class="form-control" />
                 <span asp-validation-for="MyIntCol" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MyStrCol" class="control-label">Мое строковое поле</label>
+                <label asp-for="MyStrCol" class="control-label"></label>
                 <input asp-for="MyStrCol" class="form-control" />
                 <span asp-validation-for="MyStrCol" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MyTextCol" class="control-label">Мое текстовое поле</label>
+                <label asp-for="MyTextCol" class="control-label"></label>
                 <input asp-for="MyTextCol" class="form-control" />
                 <span asp-validation-for="MyTextCol" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Создать" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Назад к списку товаров</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
