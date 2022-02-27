@@ -4,42 +4,48 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<h1>Удаление товара</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Уверены, что хотите удалить данный товар?</h3>
 <div>
     <h4>Good</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MyIntCol)
+        <dt class="col-sm-2">
+            № Товара @* @Html.DisplayNameFor(model => model.PriceId) @Html.DisplayNameFor(model => model.GoodId) *@
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GoodId)
+        </dd>
+        <dt class="col-sm-2">
+            Числловая колонка @* @Html.DisplayNameFor(model => model.MyIntCol) *@
+        </dt>
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MyIntCol)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MyStrCol)
+        <dt class="col-sm-2">
+            Строковая колонка @* @Html.DisplayNameFor(model => model.MyStrCol) *@
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MyStrCol)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MyTextCol)
+        <dt class="col-sm-2">
+            Текстовая колонка @* @Html.DisplayNameFor(model => model.MyTextCol) *@
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.MyTextCol)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
+        <dt class="col-sm-2">
+            № Прайса @* @Html.DisplayNameFor(model => model.Price) *@
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Price.PriceId)
         </dd class>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="GoodId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Удалить" class="btn btn-danger" /> |
+        <a asp-action="Index">Назад к списку товаров</a>
     </form>
 </div>
