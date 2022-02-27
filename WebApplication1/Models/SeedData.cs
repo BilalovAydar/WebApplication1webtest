@@ -22,7 +22,7 @@ namespace WebApplication1.Models
                 {
                     return;   // DB has been seeded
                 }
-                context.Price.AddRange(
+                context.Price.AddRange( // добавление данных
                     new Price
                     {
                         Name = "Прайс от 22.01.2014"
